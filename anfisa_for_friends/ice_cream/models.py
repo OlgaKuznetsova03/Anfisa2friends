@@ -59,6 +59,10 @@ class IceCream(PublishedModel):
         related_name='ice_creams',
         verbose_name='Категория'
     )
+    output_order = models.PositiveSmallIntegerField(
+        'Порядок отображения', default=100
+        )
+    price = models.DecimalField(max_digits=5, decimal_places=2)
     toppings = models.ManyToManyField(Topping, verbose_name='Топпинги')
     is_on_main = models.BooleanField(default=False, verbose_name='На главную')
 
